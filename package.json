@@ -1,6 +1,9 @@
 {
   "name": "monetriq",
   "version": "0.0.0",
+  "config": {
+    "files_stylelint": "./src/{*.scss,**/*.scss}"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +13,9 @@
     "serve:ssr:monetriq": "node dist/monetriq/server/server.mjs",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
-    "prettier:fix": "npx prettier --write ."
+    "prettier:fix": "npx prettier --write .",
+    "stylelint": "stylelint $npm_package_config_files_stylelint",
+    "stylelint:fix": "stylelint --fix $npm_package_config_files_stylelint"
   },
   "private": true,
   "dependencies": {
@@ -51,6 +56,9 @@
     "postcss": "^8.4.49",
     "prettier": "^3.4.2",
     "prettier-eslint": "^16.3.0",
+    "stylelint": "^16.12.0",
+    "stylelint-config-recess-order": "^5.1.1",
+    "stylelint-config-standard": "^36.0.1",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.2.2",
     "typescript-eslint": "8.18.0"
