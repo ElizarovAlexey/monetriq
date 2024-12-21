@@ -1,0 +1,14 @@
+:host {
+  @apply
+    flex
+    justify-center
+    items-center;
+}
+
+.form {
+  @apply
+    w-full
+    max-w-96
+    flex
+    flex-col;
+}

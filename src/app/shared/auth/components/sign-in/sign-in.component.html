@@ -1,0 +1,31 @@
+<form class="form" [formGroup]="form">
+  <mat-form-field class="form__field">
+    <mat-label>Login</mat-label>
+    <input matInput formControlName="login" />
+
+    <mat-error *ngIf="form.get('login')?.invalid"
+      >Login must contain at least 3 characters</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field class="form__field">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="password" />
+
+    <mat-error *ngIf="form.get('password')?.invalid"
+      >Password must contain at least 8 characters</mat-error
+    >
+  </mat-form-field>
+
+  <mat-form-field class="form__field">
+    <mat-label>Password</mat-label>
+    <input matInput type="password" formControlName="confirmPassword" />
+
+    <mat-error *ngIf="form.get('confirmPassword')?.hasError('minlength')"
+      >Password must contain at least 8 characters</mat-error
+    >
+    <mat-error *ngIf="form.get('confirmPassword')?.hasError('confirmedValidator')"
+      >Passwords from both fields must match</mat-error
+    >
+  </mat-form-field>
+</form>
