@@ -1,0 +1,10 @@
+services:
+  monetriq-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./dist:/app/dist
+    ports:
+      - "4000:4000"
+    command: "node dist/monetriq-server/main.js"
