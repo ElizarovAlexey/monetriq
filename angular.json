@@ -63,6 +63,19 @@
           },
           "defaultConfiguration": "production"
         },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/monetriq-server",
+            "tsConfig": "tsconfig.server.json",
+            "main": "src/main.server.ts"
+          },
+          "configurations": {
+            "production": {
+              "sourceMap": false
+            }
+          }
+        },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {

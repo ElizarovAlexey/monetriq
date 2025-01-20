@@ -8,6 +8,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng build && ng run monetriq:server",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:monetriq": "node dist/monetriq/server/server.mjs",

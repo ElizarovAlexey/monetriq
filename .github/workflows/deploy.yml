@@ -1,0 +1,41 @@
+name: Deploy Monetriq
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+
+    - name: Sync files to server
+      run: |
+        rsync -avz --delete \
+          --exclude '.git' \
+          --exclude 'node_modules' \
+          --exclude 'dist' \
+          -e "ssh -o StrictHostKeyChecking=no" \
+          ./ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/projects/monetriq"
+
+    - name: Build and deploy application
+      run: |
+        ssh -o StrictHostKeyChecking=no "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" << 'EOF'
+          cd /projects/monetriq
+          # Ensure the Docker environment is clean
+          docker compose down
+          # Build Angular Universal app
+          npm install
+          npm run build:ssr
+          # Start the updated application using Docker
+          docker compose up -d --build
+        EOF

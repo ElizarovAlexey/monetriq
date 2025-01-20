@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: monetriq_app
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+    restart: always
