@@ -1,0 +1,16 @@
+:host {
+  @apply block
+    pb-5;
+}
+
+.error {
+  @apply flex
+    justify-center
+    w-full
+    p-4
+    bg-red-600
+    text-white
+    text-lg
+    rounded-lg
+    mb-7;
+}

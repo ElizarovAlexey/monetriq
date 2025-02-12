@@ -101,8 +101,12 @@
       "excludedFiles": ["*inline-template-*.component.html"],
       "extends": ["plugin:prettier/recommended"],
       "rules": {
-        // NOTE: WE ARE OVERRIDING THE DEFAULT CONFIG TO ALWAYS SET THE PARSER TO ANGULAR (SEE BELOW)
-        "prettier/prettier": ["error", { "parser": "angular" }]
+        "prettier/prettier": [
+          "error",
+          {
+            "parser": "angular"
+          }
+        ]
       }
     },
     {
@@ -117,6 +121,10 @@
       "rules": {
         "unused-imports/no-unused-imports": "error"
       }
+    },
+    {
+      "files": ["*.ts"],
+      "extends": ["plugin:@ngrx/strict-requiring-type-checking"]
     }
   ]
 }

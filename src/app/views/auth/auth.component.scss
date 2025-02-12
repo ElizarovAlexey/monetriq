@@ -1,0 +1,15 @@
+:host {
+  @apply flex
+    w-screen
+    h-screen
+    bg-sky-200
+    items-center
+    justify-center;
+}
+
+.content {
+  @apply w-full
+    max-w-md
+    h-screen
+    max-h-160;
+}
