@@ -1,0 +1,16 @@
+:host {
+  @apply block
+    w-screen
+    h-screen;
+}
+
+.content {
+  @apply w-full
+    h-full
+    flex;
+
+  &__menu {
+    @apply w-full
+      max-w-64;
+  }
+}

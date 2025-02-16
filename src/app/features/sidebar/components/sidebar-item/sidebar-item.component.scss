@@ -1,0 +1,38 @@
+:host {
+  @apply transition-all;
+
+  :hover {
+    @apply bg-[var(--primary-100)];
+  }
+}
+
+.item {
+  @apply flex
+    items-center
+    py-3
+    px-7
+    cursor-pointer
+    rounded-md
+    border-2
+    border-transparent;
+
+  &__icon {
+    @apply w-7
+      h-7
+      mr-4;
+  }
+
+  &__label {
+    @apply text-base
+      font-medium
+      text-slate-500;
+  }
+
+  &--selected {
+    @apply border-[var(--primary-color)];
+
+    .item__label {
+      @apply text-[var(--primary-color)];
+    }
+  }
+}

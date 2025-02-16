@@ -1,0 +1,12 @@
+.menu {
+  @apply w-full
+    h-full
+    bg-slate-100
+    py-5
+    px-4;
+
+  &__item {
+    @apply block
+      pt-5;
+  }
+}

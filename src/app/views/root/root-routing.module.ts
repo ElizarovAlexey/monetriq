@@ -11,6 +11,24 @@ const routes: Routes = [
         path: '',
         loadChildren: () => import('../overview').then((m) => m.OverviewModule),
       },
+      {
+        path: 'transactions',
+        loadChildren: () =>
+          import('../transactions').then((m) => m.TransactionsModule),
+      },
+      {
+        path: 'budgets',
+        loadChildren: () => import('../budgets').then((m) => m.BudgetsModule),
+      },
+      {
+        path: 'parameters',
+        loadChildren: () =>
+          import('../parameters').then((m) => m.ParametersModule),
+      },
+      {
+        path: 'users',
+        loadChildren: () => import('../users').then((m) => m.UsersModule),
+      },
     ],
   },
 ];

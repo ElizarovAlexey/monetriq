@@ -1,0 +1,19 @@
+<div
+  class="item"
+  routerLinkActive
+  #routerLink="routerLinkActive"
+  [routerLink]="sidebarItem.path"
+  [routerLinkActiveOptions]="{ exact: true }"
+  queryParamsHandling="merge"
+  [class.item--selected]="routerLink.isActive"
+>
+  <app-icon
+    class="item__icon"
+    [src]="
+      routerLink.isActive ? sidebarItem.icon + '-primary' : sidebarItem.icon
+    "
+    [alt]="sidebarItem.label"
+  ></app-icon>
+
+  <div class="item__label">{{ sidebarItem.label }}</div>
+</div>

@@ -1,0 +1,9 @@
+<div class="menu">
+  <div class="menu__logo"></div>
+
+  <app-sidebar-item
+    *ngFor="let sidebarItem of sidebarItems"
+    [sidebarItem]="sidebarItem"
+    class="menu__item"
+  ></app-sidebar-item>
+</div>
