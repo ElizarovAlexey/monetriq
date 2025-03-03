@@ -1,31 +1,4 @@
 .button {
-  @apply w-full
-    p-3
-    border
-    border-slate-200
-    bg-white
-    rounded-md
-    mb-5
-    cursor-pointer
-    transition-colors;
-
-  &:hover {
-    @apply bg-slate-200;
-  }
-
-  &-content {
-    @apply flex
-      items-center
-      justify-center;
-  }
-
-  &-icon {
-    @apply w-6
-      mr-2;
-  }
-
-  &-label {
-    @apply text-slate-700
-      text-base;
-  }
+  @apply block
+    mb-5;
 }

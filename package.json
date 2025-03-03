@@ -17,10 +17,11 @@
     "prettier:fix": "npx prettier --write .",
     "stylelint": "stylelint $npm_package_config_files_stylelint",
     "stylelint:fix": "stylelint --fix $npm_package_config_files_stylelint",
-    "format:fix": "npm run lint:fix && npm run prettier:fix && npm run stylelint:fix"
+    "format:fix": "npm run lint:fix && npm run prettier:fix"
   },
   "private": true,
   "dependencies": {
+    "@abacritt/angularx-social-login": "^2.0.0",
     "@angular/animations": "^17.0.0",
     "@angular/common": "^17.0.0",
     "@angular/compiler": "^17.0.0",

@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { SignIn, SignUp, State } from './auth.type';
+import { GoogleAuth, SignIn, SignUp, State } from './auth.type';
 import { Observable } from 'rxjs';
 import * as selectors from './auth.selectors';
 import { User } from '../../shared/types';
@@ -47,6 +47,12 @@ export class AuthService extends StoreService {
 
   signUp(params: SignUp) {
     this._store.dispatch(actions.signUp(params));
+
+    return this.waitForState(this.entity, true);
+  }
+
+  googleAuth(params: GoogleAuth) {
+    this._store.dispatch(actions.googleAuth(params));
 
     return this.waitForState(this.entity, true);
   }

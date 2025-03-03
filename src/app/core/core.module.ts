@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IsAuthenticatedGuard, IsNotAuthenticatedGuard } from './guards';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from './../../environments/environment';
+
 @NgModule({
   declarations: [],
   imports: [
