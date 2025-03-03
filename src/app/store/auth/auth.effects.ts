@@ -77,6 +77,22 @@ export class AuthEffects {
     ),
   );
 
+  googleAuth$ = createEffect(() =>
+    this._actions.pipe(
+      ofType(actions.googleAuth),
+      concatMap(({ token }) =>
+        this._authHttp.googleAuth({ token }).pipe(
+          this._putTokensInStorage(),
+          this._putUserInStorage(),
+          map((response) => actions.googleAuthSuccess(response)),
+          catchError(({ error }: { error: Record<string, string> }) =>
+            of(actions.googleAuthError({ error })),
+          ),
+        ),
+      ),
+    ),
+  );
+
   ngrxOnInitEffects(): Action {
     return actions.initState();
   }

@@ -9,6 +9,10 @@ export class ApiService {
     return `${this._auth(version)}/login`;
   }
 
+  googleAuth(version: Version) {
+    return `${this._auth(version)}/google`;
+  }
+
   signUp(version: Version) {
     return `${this._auth(version)}/register`;
   }

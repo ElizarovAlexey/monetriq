@@ -11,6 +11,10 @@ export interface SignUp {
   password: string;
 }
 
+export interface GoogleAuth {
+  token: string;
+}
+
 export interface SignInResponse {
   credentials: User;
   token: string;

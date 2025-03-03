@@ -16,7 +16,7 @@ export const authReducer = createReducer(
   on(
     actions.initState,
     actions.signIn,
-    actions.signInGoogle,
+    actions.googleAuth,
     actions.signUp,
     (state) => ({
       ...state,
@@ -27,7 +27,7 @@ export const authReducer = createReducer(
   on(
     actions.initStateError,
     actions.signInError,
-    actions.signInGoogleError,
+    actions.googleAuthError,
     actions.signUpError,
     (state, { error }) => ({
       ...state,
@@ -41,6 +41,7 @@ export const authReducer = createReducer(
     actions.initStateSuccess,
     actions.signInSuccess,
     actions.signUpSuccess,
+    actions.googleAuthSuccess,
     (state, { credentials, token }) => ({
       ...state,
       credentials,
